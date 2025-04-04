@@ -12,6 +12,7 @@ import Input from '@/components/Input';
 
 import { api } from '@/services/api';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { setCookie } from 'nookies';
 import { z } from 'zod';
 
 type FormData = {
@@ -45,7 +46,9 @@ export default function Login() {
         password: data.password,
       });
 
-      if (!response.data.token) {
+      const token = response.data.token;
+
+      if (!token) {
         reset();
         toast.error('E-mail ou senha inválidos', {
           duration: 5000,
@@ -57,20 +60,17 @@ export default function Login() {
         });
         return;
       }
+
+      setCookie(null, 'session', token, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/',
+      });
     } catch (error) {
       console.error('Erro ao fazer login:', error);
       reset();
-      toast.error('E-mail ou senha inválidos', {
-        duration: 5000,
-        position: 'bottom-center',
-        style: {
-          background: '#333333',
-          color: '#FFFFFF',
-        },
-      });
     }
 
-    router.push('/pedidos');
+    router.push('/dashboard/pedidos');
   };
 
   return (
