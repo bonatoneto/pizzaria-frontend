@@ -10,6 +10,7 @@ export default function NewCategory() {
           <div className="flex flex-col gap-4 w-full max-w-2xl pt-24">
             <h1 className="text-soft-gray text-5xl">Cadastrar Categoria</h1>
             <Input
+              label="Nome da Categoria"
               id="new-category"
               name="new-category"
               placeholder="Digite o nome da categoria"
