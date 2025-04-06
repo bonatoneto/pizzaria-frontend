@@ -70,7 +70,7 @@ export default function Login() {
       reset();
     }
 
-    router.push('/dashboard/pedidos');
+    router.push('/dashboard');
   };
 
   return (

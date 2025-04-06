@@ -1,6 +1,8 @@
-import Button from '@/components/Button';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import Container from '@/components/Container';
-import Input from '@/components/Input';
+import FormNewCategory from '@/components/FormNewCategory';
 
 export default function NewCategory() {
   return (
@@ -8,15 +10,16 @@ export default function NewCategory() {
       <Container>
         <div className="flex justify-center w-full h-full">
           <div className="flex flex-col gap-4 w-full max-w-2xl pt-24">
+            <Link href="/dashboard" className="cursor-pointer">
+              <Image
+                src="/assets/arrow-left.svg"
+                alt="Ícone para voltar"
+                width={40}
+                height={40}
+              />
+            </Link>
             <h1 className="text-soft-gray text-5xl">Cadastrar Categoria</h1>
-            <Input
-              label="Nome da Categoria"
-              id="new-category"
-              name="new-category"
-              placeholder="Digite o nome da categoria"
-              type="text"
-            />
-            <Button color="secondary">Cadastrar</Button>
+            <FormNewCategory />
           </div>
         </div>
       </Container>

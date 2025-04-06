@@ -125,7 +125,7 @@ export default function RegisterCompany() {
                   </span>
                 )}
               </div>
-              <Button color="primary">Acessar</Button>
+              <Button color="primary">Cadastrar</Button>
             </form>
           </div>
         </div>

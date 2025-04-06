@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from './Container';
+import LogoutButton from './LogoutButton';
 
 export default function Header() {
   return (
@@ -14,14 +15,9 @@ export default function Header() {
           height={48}
         />
         <nav className="flex items-center gap-6 font-semibold text-soft-gray">
-          <Link href="/">Nova categoria</Link>
-          <Link href="/">Cardápio</Link>
-          <Image
-            src="/assets/log-out.svg"
-            alt="Ícone para sair da aplicação"
-            width={38}
-            height={38}
-          />
+          <Link href="/dashboard/nova-categoria">Nova categoria</Link>
+          <Link href="/dashboard/novo-produto">Cardápio</Link>
+          <LogoutButton />
         </nav>
       </Container>
     </header>

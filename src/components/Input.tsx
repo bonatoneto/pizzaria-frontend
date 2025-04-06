@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 
 type InputProps = {
-  label: string;
+  label?: string;
   ref?: React.Ref<HTMLInputElement | null>;
 } & InputHTMLAttributes<HTMLInputElement>;
 
