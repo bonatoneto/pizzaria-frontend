@@ -13,9 +13,9 @@ export default function InternalLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <body>
+    <>
       <Header />
       {children}
-    </body>
+    </>
   );
 }

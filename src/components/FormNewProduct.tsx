@@ -4,11 +4,18 @@ import Button from './Button';
 import Input from './Input';
 
 export default function FormNewProduct() {
+  function handleUploadImage(image: File) {
+    console.log('imagem', image);
+    if (!image) return;
+  }
+
   return (
     <form className="flex flex-col gap-4 w-full">
       <Input
         className="border border-soft-gray h-60 rounded-sm text-soft-gray"
         type="file"
+        accept=".png .jpeg"
+        onChange={() => handleUploadImage}
       />
       <Input
         label="Categoria"
